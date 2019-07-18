@@ -6,8 +6,14 @@ module.exports = {
   getInstructions
 };
 
-async function getRecipes() {}
+async function getRecipes() {
+  return await db("recipes");
+}
 
-async function getShoppingList(recipe_id) {}
+async function getShoppingList(recipe_id) {
+  return await db("ingredients").where({ recipe_id });
+}
 
-async function getInstructions(recipe_id) {}
+async function getInstructions(recipe_id) {
+  return await db("instructions").where({ recipe_id });
+}

@@ -12,3 +12,5 @@ server.use(bodyParser.json());
 server.use(cors());
 
 server.use("/api/recipes", recipeRouter);
+
+module.exports = server;
