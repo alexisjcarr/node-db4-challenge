@@ -8,14 +8,15 @@ module.exports = {
     },
     useNullAsDefault: true,
     migrations: {
-      directory: './data/migrations'
+      directory: "./data/migrations"
     },
     seeds: {
       directory: "./data/seeds"
     },
     pool: {
       afterCreate: (conn, done) => {
-        conn.run('PRAGMA foreign_keys = ON', done); 
+        conn.run("PRAGMA foreign_keys = ON", done);
       }
+    }
   }
 };
