@@ -14,7 +14,7 @@ router.get("/:id/shoppingList", async (req, res) => {
   const { id } = req.params;
   try {
     const list = await db.getShoppingList(id);
-    if (!list) {
+    if (list.length === 0) {
       res.status(404).json({
         message: `No ingredients for recipe with id ${id}.`
       });
@@ -30,7 +30,7 @@ router.get("/:id/instructions", async (req, res) => {
   const { id } = req.params;
   try {
     const list = await db.getInstructions(id);
-    if (!list) {
+    if (list.length === 0) {
       res.status(404).json({
         message: `No instructions for recipe with id ${id}.`
       });
